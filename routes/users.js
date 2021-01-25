@@ -1,25 +1,34 @@
 var express = require('express');
 var router = express.Router();
 
+// 用户模块导入
+let User=require('../models/user')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+router.post('/addUser',(req, res, next)=>{
 
-// 实现用户提交信息，注册事项
-// Response   响应
-// Request    请求
+  let userInfo={
+    username: req.body.username,
+    password: req.body.password,
+    password1: req.body.password1,
+  }
+// if(userInfo.password!=password1){
+//   // console.log('两次密码不一致！')
+//   let error={
+//     status:0,
+//     stack:''
+//   }
+//   res.render('error',{message:'密码不一致'})
+// }
 
-router.post('/addUser', (req, res, next) => {
-
-  // console.log(req.body.userName);
-  // console.log(req.body.password);
-  // console.log(req.body.passwordC);
-  // 用户填写的表单信息可以通过req.body获取到
-
-  // res.send('点击注册了')
-  // console.log('点击注册了')
+  let userI=new User(userInfo)
+  userI.save((err,result)=>{
+    if(!err){
+      res.send(result)
+    }
+  })
 })
-
 
 module.exports = router;

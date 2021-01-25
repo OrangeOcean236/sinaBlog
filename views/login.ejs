@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-
-
-
-    <!-- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/libs/layui/css/layui.css' /> -->
-    
-    <%- include('head', {}); %>
-    
-    
-    
-    <title>Document</title>
+    <%- include('head',{}); %>
+    <title>登录</title>
 </head>
-<body>
-    <div class="layui-container">  
 
+<body>
+    <div class="layui-container">
         <div class="layui-row">
-          <form class="layui-form" action="">
-              <div class="layui-form-item">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
-                    <div class="layui-from-block">
-                            <input type="text" name="title" required  placeholder="请输入用户名" class="layui-input">
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  placeholder="请输入用户名" class="layui-input">
                     </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">密码</label>
-                <div class="layui-from-block">
-                        <input type="password" name="title" required  class="layui-input">
-                    
                 </div>
-              </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="title" required placeholder="请输入密码" class="layui-input">
+                    </div>
+                </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                      <button class="layui-btn" >立即提交</button>
-                      
+                      <button class="layui-btn" >登录</button>
                     </div>
                   </div>
-          </form>
+                  <div class="layui-form-item">
+                    <div class="layui-p">
+                        <p>没有账号，<a href="./zhuce">立即注册</a>！</p>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>
+
 </html>
