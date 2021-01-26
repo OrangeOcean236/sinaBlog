@@ -3,11 +3,14 @@ var router = express.Router();
 
 /* GET home page.首页 */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  let username = req.session.userName || ''
+
+
+  res.render('index', { username });
 });
 
 //登录路由配置
-router.get('/login', function(req, res) {
+router.get('/login', function (req, res) {
   res.render('login', {});
 });
 
